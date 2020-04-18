@@ -35,10 +35,17 @@
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 
-    <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css' rel='stylesheet' />
 
     <script src="node_modules/clipboard/dist/clipboard.min.js"></script>
+
+    <style>
+        .mapboxgl-popup {
+        max-width: 400px;
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        }
+    </style>
 
 </head>
 
@@ -164,24 +171,7 @@
             <p>The Windy City</p>
         </div>
     </section>
-
-    <section id="LocationMap">
-            <div id='map' style='height: 300px;'></div>
-            <script>
-                mapboxgl.accessToken = 'pk.eyJ1IjoianJlbW85MiIsImEiOiJjazk2MTNtY2owZXg3M21zMHEwdnprc25zIn0.mPZS44U8sSBWg_AsEHD71A';
-                var map = new mapboxgl.Map({
-                    container: 'map',
-                    style: 'mapbox://styles/mapbox/streets-v11'
-                });
-                var map = new mapboxgl.Map({
-                    container: 'map', // container id
-                    style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-                    center: [-87.828738, 42.021777], // starting position [lng, lat]
-                    zoom: 13 // starting zoom
-                });
-            </script>
-        </section>
-    
+        
     <section class="events section-padding" id="events">
         <div class="container">
             <div class="row">
@@ -412,6 +402,37 @@
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
+    </section>
+
+    <section id="LocationMap">
+        <div id='map' style='height: 450px;'></div>
+        <script>
+            mapboxgl.accessToken = 'pk.eyJ1IjoianJlbW85MiIsImEiOiJjazk2MTNtY2owZXg3M21zMHEwdnprc25zIn0.mPZS44U8sSBWg_AsEHD71A'; // replace this with your access token
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/jremo92/ck9692spc2iuk1io5nzdvg13u', // replace this with your style URL
+                center: [-87.816097, 41.998762],
+                zoom: 10.7
+            });
+
+            map.on('click', function (e) {
+                var features = map.queryRenderedFeatures(e.point, {
+                    layers: ['wedding-locations'] // replace this with the name of the layer
+                });
+
+                if (!features.length) {
+                    return;
+                }
+
+                var feature = features[0];
+
+                var popup = new mapboxgl.Popup({ offset: [0, -15] })
+                    .setLngLat(feature.geometry.coordinates)
+                    .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.address + '</p>')
+                    .addTo(map);
+            });
+
+        </script>
     </section>
 
     <section id="Travel" class="section-padding">
