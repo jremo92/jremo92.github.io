@@ -144,7 +144,44 @@
             </div>
         </div>
     </section>
+    
+    <section id="Details">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2>Wedding Details</h2>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section id="video-bg" class="hidden-sm hidden-xs">
+        <div id="bgndVideo" class="player"
+            data-property="{videoURL:'https://youtu.be/MqNcVgqD4xs',containment:'#video-bg',autoPlay:true, mute:true, showControls:false, startAt:80, stopAt:259, opacity:1}">
+        </div>
+        <div id="video-content">
+            <h5>Chicago</h5>
+            <p>The Windy City</p>
+        </div>
+    </section>
+
+    <section id="LocationMap">
+            <div id='map' style='height: 300px;'></div>
+            <script>
+                mapboxgl.accessToken = 'pk.eyJ1IjoianJlbW85MiIsImEiOiJjazk2MTNtY2owZXg3M21zMHEwdnprc25zIn0.mPZS44U8sSBWg_AsEHD71A';
+                var map = new mapboxgl.Map({
+                    container: 'map',
+                    style: 'mapbox://styles/mapbox/streets-v11'
+                });
+                var map = new mapboxgl.Map({
+                    container: 'map', // container id
+                    style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+                    center: [-87.828738, 42.021777], // starting position [lng, lat]
+                    zoom: 13 // starting zoom
+                });
+            </script>
+        </section>
+    
     <section class="events section-padding" id="events">
         <div class="container">
             <div class="row">
@@ -183,7 +220,7 @@
                             });
                         </script>
 
-                        <a id="weddingShowerMaps" class="btn btn-accent btn-small" href="https://www.google.com/maps/search/?api=1&query=Paula%20Hassell%20O%27Connor%20Community%20Building%20733%20N%20Prospect%20Ave%20Park%20Ridge%2C%20Illinois" target="_blank">
+                        <a id="weddingShowerMaps" class="btn btn-accent btn-small" href="https://www.google.com/maps/search/?api=1&query=Paula%20Hassell%20O%27Connor%20Community%20Building%20733%20N%20Prospect%20Ave%20Park%20Ridge%2C%20Illinois" target="_blank" style="margin-bottom: 10px;">
                                 <i class="fa fa-files-o"></i>&nbsp;&nbsp;Open in Google Maps
                         </a>
                     </div>
@@ -225,7 +262,7 @@
                             });
                         </script>
 
-                        <a id="weddingRehersalMaps" class="btn btn-accent btn-small" href="https://www.google.com/maps/search/?api=1&query=Our%20Lady%20of%20Ransom%20Catholic%20Church%208300%20N%20Greenwood%20Ave%20Niles%2C%20IL%2060714" target="_blank">
+                        <a id="weddingRehersalMaps" class="btn btn-accent btn-small" href="https://www.google.com/maps/search/?api=1&query=Our%20Lady%20of%20Ransom%20Catholic%20Church%208300%20N%20Greenwood%20Ave%20Niles%2C%20IL%2060714" target="_blank" style="margin-bottom: 10px;">
                                 <i class="fa fa-files-o"></i>&nbsp;&nbsp;Open in Google Maps
                         </a>
 
@@ -258,7 +295,7 @@
                                 });
                             </script>
     
-                            <a id="weddingRehersalMaps" class="btn btn-accent btn-small" href="https://www.google.com/maps/search/?api=1&query=Tita%20Mia%27s%20Filipino%20Restaurant%20%26Cafe%208520%20W%20Golf%20Rd%20Niles%2C%20IL%2060714" target="_blank">
+                            <a id="weddingRehersalMaps" class="btn btn-accent btn-small" href="https://www.google.com/maps/search/?api=1&query=Tita%20Mia%27s%20Filipino%20Restaurant%20%26Cafe%208520%20W%20Golf%20Rd%20Niles%2C%20IL%2060714" target="_blank" style="margin-bottom: 10px;">
                                     <i class="fa fa-files-o"></i>&nbsp;&nbsp;Open in Google Maps
                             </a>
                     </div>
@@ -295,7 +332,7 @@
                         
                         <a id="weddingCeremonyMaps" class="btn btn-accent btn-small"
                             href="https://www.google.com/maps/search/?api=1&query=Our%20Lady%20of%20Ransom%20Catholic%20Church%208300%20N%20Greenwood%20Ave%20Niles%2C%20IL%2060714"
-                            target="_blank">
+                            target="_blank" style="margin-bottom: 10px;">
                             <i class="fa fa-files-o"></i>&nbsp;&nbsp;Open in Google Maps
                         </a>
                     </div>
@@ -329,7 +366,7 @@
                         
                         <a id="weddingCeremonyMaps" class="btn btn-accent btn-small"
                             href="https://www.google.com/maps/search/?api=1&query=Biagio%20Events%2C%20Catering%20%26amp%3B%20Banquets%204242%20North%20Central%20Avenue%20Chicago%2C%20Illinois"
-                            target="_blank">
+                            target="_blank" style="margin-bottom: 10px;">
                             <i class="fa fa-files-o"></i>&nbsp;&nbsp;Open in Google Maps
                         </a>
                     </div>
@@ -376,6 +413,56 @@
         </div><!-- /.modal -->
 
     </section>
+
+    <section id="Travel" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="header">Hotels</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                    <div class="thumbnail">
+                        <img src="img/hamptonInnRosemont550x250.jpg">
+                        <div class="caption">
+                            <h3>Hampton Inn and Suites Rosemont</h3>
+                            <p>Room Block available at <b>$119/night</b>. Use the button below to get the block rate or call the hotel directly and mention you are booking for the Kwon-Remo Wedding.</p>
+                            <ul class="list-group">
+                                <li class="list-group-item">Breakfast Included</li>
+                                <li class="list-group-item">Starbucks around the Corner</li>
+                                <li class="list-group-item">Pool at the hotel</li>
+                            </ul>
+                            <p>Parking: Included</p>
+                            <p><a href="#" class="btn btn-primary" role="button">Book Room </a> <a href="#" class="btn btn-default"
+                                    role="button">Button</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                    <div class="thumbnail">
+                        <img src="img/roseHotelRosemont550x250.jpg">
+                        <div class="caption">
+                            <h3>The Rose Hotel</h3>
+                            <p>Room Block available at <b>$119/night</b>. Use the button below to get the block rate or call the hotel
+                                directly and mention you are booking for the Kwon-Remo Wedding.</p>
+                            <ul class="list-group">
+                                <li class="list-group-item">Breakfast Included</li>
+                                <li class="list-group-item">Starbucks around the Corner</li>
+                                <li class="list-group-item">Pool at the hotel</li>
+                            </ul>
+                            <p>Parking: Included</p>
+                            <p><a href="#" class="btn btn-primary" role="button">Book Room </a> <a href="#" class="btn btn-default"
+                                    role="button">Button</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    
 
     <!-- <section id="instagram" class="section-padding">
     <div class="container">
@@ -747,8 +834,6 @@
 
     </section>
 
-
-
     <section id="eng-pics" class="section-padding">
         <div class="container-fluid">
             <div class="row">
@@ -834,33 +919,7 @@
     </div>-->
     </section>
 
-    <section id="video-bg" class="hidden-sm hidden-xs">
-        <div id="bgndVideo" class="player"
-            data-property="{videoURL:'https://youtu.be/MqNcVgqD4xs',containment:'#video-bg',autoPlay:true, mute:true, showControls:false, startAt:80, stopAt:259, opacity:1}">
-        </div>
-        <div id="video-content">
-            <h5>Chicago</h5>
-            <p>The Windy City</p>
-        </div>
-    </section>
-
-    <section id="LocationMap" class="section-padding">
-        <!-- <div id='map' style='height: 300px;'></div>
-        <script>
-            mapboxgl.accessToken = 'pk.eyJ1IjoianJlbW85MiIsImEiOiJjazk2MTNtY2owZXg3M21zMHEwdnprc25zIn0.mPZS44U8sSBWg_AsEHD71A';
-            var map = new mapboxgl.Map({
-                container: 'map',
-                style: 'mapbox://styles/mapbox/streets-v11'
-            });
-            var map = new mapboxgl.Map({
-                container: 'map', // container id
-                style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-                center: [-87.828738, 42.021777], // starting position [lng, lat]
-                zoom: 13 // starting zoom
-            });
-        </script> -->
-    </section>
-
+    
     <!-- <section id="map" class="section-padding">
     <div class="text-center">
         <h3>How do I get there?</h3>
